@@ -1,3 +1,30 @@
 body {
     margin: 0;
+    font-family: "Smythe", system-ui;
+    
 } 
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/ferks-guare-KEZdWfYD-ow-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    width: 500px;
+    height: 150px;
+    border: 2px dashed blue;
+}
+
+.title {
+    margin: auto,auto, auto, 0;
+    padding-left: 30px;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h3 {
+    margin-top: 0;
+}
