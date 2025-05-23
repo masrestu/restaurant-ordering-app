@@ -32,3 +32,11 @@ h3 {
     display: flex;
     color: black;
  }
+
+ .payment-modal {
+    display: block;
+ }
+
+ .confirm-modal {
+    display: none;
+ }

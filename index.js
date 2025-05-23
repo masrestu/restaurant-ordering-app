@@ -17,6 +17,15 @@ const menuHtml = menuArray.map (function(menuItem) {
         })
 
 document.getElementById("menu-items").innerHTML = menuHtml
+document.getElementById("confirm-modal").innerHTML =`
+        <h2>Thanks, {username}! Your order is on its way!</h2>
+        `
+function openConfirmModal(){
+    document.getElementById("confirm-modal").style.display = 'flex'
+}
+        
+/*openConfirmModal()*/
+
 
 
 
