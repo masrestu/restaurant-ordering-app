@@ -29,5 +29,6 @@ h3 {
     margin-top: 0;
 }
 .menu-item {
+    display: flex;
     color: black;
  }

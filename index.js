@@ -9,13 +9,14 @@ const menuHtml = menuArray.map (function(menuItem) {
                         <div class="item-info">
                                 <h3 class="item-name">${menuItem.name}</h3>
                                 <p class="item-ingredients">${menuItem.ingredients}</p>
-                                <p class="item-price>$${menuItem.price}</p>
+                                <p class="item-price">$${menuItem.price}</p>
                         </div>
+                        <button id="add-btn">+</button>
                 </div>
                 `
         })
 
-document.getElementById("menu-item").innerHTML = menuHtml
+document.getElementById("menu-items").innerHTML = menuHtml
 
 
 
