@@ -11,12 +11,25 @@ const menuHtml = menuArray.map (function(menuItem) {
                                 <p class="item-ingredients">${menuItem.ingredients}</p>
                                 <p class="item-price">$${menuItem.price}</p>
                         </div>
-                        <button id="add-btn">+</button>
+                        <button id="add-btn" data-add-btn="${menuItem.id}">+</button>
                 </div>
                 `
         })
 
+
+
 document.getElementById("menu-items").innerHTML = menuHtml
+
+const addBtn = document.getElementById("add-btn")
+document.addEventListener("click", function(e) {
+       if (e.target.dataset.addBtn) {
+        console.log(menuArray[e.target.dataset.addBtn].name + 
+                " $" + menuArray[e.target.dataset.addBtn].price)
+        }
+})
+
+
+
 document.getElementById("confirm-modal").innerHTML =`
         <h2>Thanks, {username}! Your order is on its way!</h2>
         `
