@@ -23,8 +23,20 @@ document.getElementById("menu-items").innerHTML = menuHtml
 const addBtn = document.getElementById("add-btn")
 document.addEventListener("click", function(e) {
        if (e.target.dataset.addBtn) {
-        console.log(menuArray[e.target.dataset.addBtn].name + 
-                " $" + menuArray[e.target.dataset.addBtn].price)
+        /*console.log(menuArray[e.target.dataset.addBtn].name + 
+                " $" + menuArray[e.target.dataset.addBtn].price)*/
+        let itemsOrdered = document.getElementById("items-ordered")
+        itemsOrdered.innerHTML += `
+                <h3>${menuArray[e.target.dataset.addBtn].name} 
+                        <button class="remove-btn" data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
+                        REMOVE</button> $${menuArray[e.target.dataset.addBtn].price}
+                </h3>
+                ` 
+        let total = document.getElementById("total")
+        total.innerHTML = `
+                <h3>Total price: $XX.YY</h3>
+                `   
+        order.style.display = "block"
         }
 })
 
@@ -41,7 +53,7 @@ function openConfirmModal(){
 
 
 
-
+/*dataset in lines 31 and 32 need to be changed*/
 /* Strategy
 
      styling similar to Oldagram:
