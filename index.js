@@ -17,10 +17,11 @@ const menuHtml = menuArray.map (function(menuItem) {
 document.getElementById("menu-items").innerHTML = menuHtml
 
 const itemsOrderedArr = []
+let itemsOrdered = document.getElementById("items-ordered")
 document.addEventListener("click", function(e) {
        if (e.target.dataset.addBtn) {
         itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
-        let itemsOrdered = document.getElementById("items-ordered")
+        /*let itemsOrdered = document.getElementById("items-ordered")*/
         itemsOrdered.innerHTML += `
                 <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
                 <button class="remove-btn" data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
@@ -43,9 +44,10 @@ document.addEventListener("click", function(e) {
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
                 console.log(itemsOrderedArr)
                 total.innerHTML = `
-                <h3>Total price: $${totalPrice - itemsOrderedArr.indexOf(itemToRemove).price}</h3>`
+                <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
+               /*experiment: reinsert innerHtml from what remains of the array after removal? 
+               or try with AI suggestion?*/
         }
-
         
 
 
