@@ -27,6 +27,7 @@ document.addEventListener("click", function(e) {
                 REMOVE</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
                 </h3>
                 `
+       }    
         const totalPrice = itemsOrderedArr.reduce((total,currentPrice) => 
                  total + currentPrice.price, 0)
         let total = document.getElementById("total")
@@ -34,7 +35,20 @@ document.addEventListener("click", function(e) {
                 <h3>Total price: $${totalPrice}</h3>
                 `
         order.style.display = "block"
+        
+        if (e.target.dataset.removeBtn) {
+                const itemToRemove = menuArray[e.target.dataset.removeBtn]
+                console.log(itemToRemove)
+                console.log(itemsOrderedArr)
+                itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
+                console.log(itemsOrderedArr)
+                total.innerHTML = `
+                <h3>Total price: $${totalPrice - itemsOrderedArr.indexOf(itemToRemove).price}</h3>`
         }
+
+        
+
+
 })
 
 document.getElementById("confirm-modal").innerHTML =`
