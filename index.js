@@ -21,7 +21,6 @@ let itemsOrdered = document.getElementById("items-ordered")
 document.addEventListener("click", function(e) {
        if (e.target.dataset.addBtn) {
         itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
-        /*let itemsOrdered = document.getElementById("items-ordered")*/
         itemsOrdered.innerHTML += `
                 <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
                 <button class="remove-btn" data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
@@ -39,18 +38,21 @@ document.addEventListener("click", function(e) {
         
         if (e.target.dataset.removeBtn) {
                 const itemToRemove = menuArray[e.target.dataset.removeBtn]
-                console.log(itemToRemove)
-                console.log(itemsOrderedArr)
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
-                console.log(itemsOrderedArr)
+                itemsOrdered.innerHTML = ""
+                itemsOrdered.innerHTML = itemsOrderedArr.map(function(item) {
+                        return `
+                        <h3>${item.name} 
+                        <button class="remove-btn" data-remove-btn="${item.id}">
+                        REMOVE</button> $${item.price}
+                        </h3>
+                        `
+                })        
                 total.innerHTML = `
                 <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
-               /*experiment: reinsert innerHtml from what remains of the array after removal? 
-               or try with AI suggestion?*/
+        
         }
         
-
-
 })
 
 document.getElementById("confirm-modal").innerHTML =`
