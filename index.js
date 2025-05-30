@@ -52,17 +52,30 @@ document.addEventListener("click", function(e) {
                 <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
         
         }
-        
+
+const paymentModal = document.getElementById("payment-modal")       
+const completeBtn = document.getElementById("complete-btn")
+const payBtn = document.getElementById("pay-btn")
+completeBtn.addEventListener("click", function() {
+        paymentModal.style.display = "block"
+        })
 })
 
-document.getElementById("confirm-modal").innerHTML =`
+/*document.getElementById("confirm-modal").innerHTML =`
         <h2>Thanks, {username}! Your order is on its way!</h2>
         `
 function openConfirmModal(){
     document.getElementById("confirm-modal").style.display = 'flex'
-}
-        
-/*openConfirmModal()*/
+    paymentModal.style.display = "none"
+}*/
+ 
+payBtn.addEventListener("click", function() {
+        document.getElementById("confirm-modal").innerHTML = `
+                <h2>Thanks, {username}! Your order is on its way!</h2>
+                `
+        paymentModal.style.display = "none"
+        document.getElementById("confirm-modal").style.display = 'flex'
+})
 
 
 
