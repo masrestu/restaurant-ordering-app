@@ -13,11 +13,11 @@ const menuHtml = menuArray.map (function(menuItem) {
                 </div>
                 `
         })
-
 document.getElementById("menu-items").innerHTML = menuHtml
 
 const itemsOrderedArr = []
 let itemsOrdered = document.getElementById("items-ordered")
+let total = document.getElementById("total")
 document.addEventListener("click", function(e) {
        if (e.target.dataset.addBtn) {
         itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
@@ -27,15 +27,14 @@ document.addEventListener("click", function(e) {
                 REMOVE</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
                 </h3>
                 `
-       }    
+        order.style.display = "block"
+       } 
         const totalPrice = itemsOrderedArr.reduce((total,currentPrice) => 
                  total + currentPrice.price, 0)
         let total = document.getElementById("total")
         total.innerHTML = `
                 <h3>Total price: $${totalPrice}</h3>
                 `
-        order.style.display = "block"
-        
         if (e.target.dataset.removeBtn) {
                 const itemToRemove = menuArray[e.target.dataset.removeBtn]
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
@@ -50,26 +49,19 @@ document.addEventListener("click", function(e) {
                 })        
                 total.innerHTML = `
                 <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
-        
-        }
+                }     
+})
 
-const paymentModal = document.getElementById("payment-modal")       
 const completeBtn = document.getElementById("complete-btn")
-const payBtn = document.getElementById("pay-btn")
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
         })
-})
 
-/*document.getElementById("confirm-modal").innerHTML =`
-        <h2>Thanks, {username}! Your order is on its way!</h2>
-        `
-function openConfirmModal(){
-    document.getElementById("confirm-modal").style.display = 'flex'
-    paymentModal.style.display = "none"
-}*/
- 
+const paymentModal = document.getElementById("payment-modal")
+const payBtn = document.getElementById("pay-btn")
 payBtn.addEventListener("click", function() {
+       console.log("payment button clicked")
+
         document.getElementById("confirm-modal").innerHTML = `
                 <h2>Thanks, {username}! Your order is on its way!</h2>
                 `
@@ -79,8 +71,8 @@ payBtn.addEventListener("click", function() {
 
 
 
-/*dataset in lines 31 and 32 need to be changed*/
-/* Strategy
+
+/* Styling strategy
 
      styling similar to Oldagram:
         1 section in HTML, iterate in JS for innerHtml
