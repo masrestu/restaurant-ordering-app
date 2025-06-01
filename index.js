@@ -23,7 +23,8 @@ document.addEventListener("click", function(e) {
         itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
         itemsOrdered.innerHTML += `
                 <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
-                <button class="remove-btn" data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
+                <button class="remove-btn" 
+                data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
                 REMOVE</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
                 </h3>
                 `
@@ -66,6 +67,7 @@ payBtn.addEventListener("click", function() {
                 <h2>Thanks, {username}! Your order is on its way!</h2>
                 `
         paymentModal.style.display = "none"
+        order.style.display = "none"
         document.getElementById("confirm-modal").style.display = 'flex'
 })
 
