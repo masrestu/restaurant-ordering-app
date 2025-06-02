@@ -7,12 +7,13 @@ const menuHtml = menuArray.map (function(menuItem) {
                         <div class="item-info">
                                 <h3 class="item-name">${menuItem.name}</h3>
                                 <p class="item-ingredients">${menuItem.ingredients}</p>
-                                <p class="item-price">$${menuItem.price}</p>
+                                <h2 class="item-price">$${menuItem.price}</h2>
                         </div>
                         <button id="add-btn" data-add-btn="${menuItem.id}">+</button>
                 </div>
                 `
         })
+        .join("")
 document.getElementById("menu-items").innerHTML = menuHtml
 
 const itemsOrderedArr = []
