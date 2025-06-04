@@ -12,8 +12,8 @@ const menuHtml = menuArray.map (function(menuItem) {
                         <button id="add-btn" data-add-btn="${menuItem.id}">+</button>
                 </div>
                 `
-        })
-        .join("")
+        }).join("")
+
 document.getElementById("menu-items").innerHTML = menuHtml
 
 const itemsOrderedArr = []
@@ -26,7 +26,7 @@ document.addEventListener("click", function(e) {
                 <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
                 <button class="remove-btn" 
                 data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
-                REMOVE</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
+                remove</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
                 </h3>
                 `
         order.style.display = "block"
@@ -65,7 +65,7 @@ payBtn.addEventListener("click", function() {
        console.log("payment button clicked")
 
         document.getElementById("confirm-modal").innerHTML = `
-                <h2>Thanks, {username}! Your order is on its way!</h2>
+                <h2>Thanks, James! Your order is on its way!</h2>
                 `
         paymentModal.style.display = "none"
         order.style.display = "none"
