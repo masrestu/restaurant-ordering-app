@@ -45,7 +45,7 @@ document.addEventListener("click", function(e) {
                         return `
                         <h3>${item.name} 
                         <button class="remove-btn" data-remove-btn="${item.id}">
-                        REMOVE</button> $${item.price}
+                        remove</button> $${item.price}
                         </h3>
                         `
                 })        
