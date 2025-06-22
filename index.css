@@ -86,6 +86,8 @@ h3 {
     color: #d9d9d9;
 }
 
+
+
  .payment-modal {
     display: none;
     position: fixed;
@@ -99,15 +101,40 @@ h3 {
     background-color: white;
     border-radius: 5px;
     text-align: center;
-    
+    font-family: verdana, sans-serif;
+    border: 2px dashed blue;
  }
 
-.input, #pay-btn {
+.card-input, #pay-btn, #complete-btn {
     width: 475px;
     height: 70px;
-    margin: auto;
+}
+
+.card-input {
+    font-family: verdana, sans-serif;
+    font-size: 20px;
+    border: 2px solid #16DB99;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 10px auto;
+}
+
+#pay-btn, #complete-btn {
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     
 }
+
+#pay-btn {
+    font-size: 20px;
+    margin: 30px auto;
+}
+
  .confirm-modal {
     display: none;
     background-color: #ECFDF5;
