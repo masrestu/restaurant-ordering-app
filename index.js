@@ -57,16 +57,17 @@ document.addEventListener("click", function(e) {
 const completeBtn = document.getElementById("complete-btn")
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
+        mainMenu.style.backgroundColor = "rgba(0,0,0,0.4)"
         })
 
+const mainMenu = document.getElementById("main-menu")
 const paymentModal = document.getElementById("payment-modal")
 const payBtn = document.getElementById("pay-btn")
 payBtn.addEventListener("click", function() {
-       console.log("payment button clicked")
-
         document.getElementById("confirm-modal").innerHTML = `
                 <h2>Thanks, James! Your order is on its way!</h2>
                 `
+        mainMenu.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
         document.getElementById("confirm-modal").style.display = 'flex'
