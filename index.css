@@ -86,7 +86,10 @@ h3 {
     color: #d9d9d9;
 }
 
-
+#complete-btn {
+    width: 600px;
+    height: 70px
+}
 
  .payment-modal {
     display: none;
@@ -105,7 +108,7 @@ h3 {
     border: 2px dashed blue;
  }
 
-.card-input, #pay-btn, #complete-btn {
+.card-input, #pay-btn {
     width: 475px;
     height: 70px;
 }
