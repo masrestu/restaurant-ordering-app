@@ -10,8 +10,7 @@ const menuHtml = menuArray.map (function(menuItem) {
                                 <h2 class="item-price">$${menuItem.price}</h2>
                         </div>
                         <button id="add-btn" data-add-btn="${menuItem.id}">+</button>
-                </div>
-                `
+                </div>`
         }).join("")
 
 document.getElementById("menu-items").innerHTML = menuHtml
@@ -27,16 +26,14 @@ document.addEventListener("click", function(e) {
                 <button class="remove-btn" 
                 data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
                 remove</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
-                </h3>
-                `
+                </h3>`
         order.style.display = "block"
        } 
         const totalPrice = itemsOrderedArr.reduce((total,currentPrice) => 
                  total + currentPrice.price, 0)
         let total = document.getElementById("total")
         total.innerHTML = `
-                <h3>Total price: $${totalPrice}</h3>
-                `
+                <h3>Total price: $${totalPrice}</h3>`
         if (e.target.dataset.removeBtn) {
                 const itemToRemove = menuArray[e.target.dataset.removeBtn]
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
@@ -46,8 +43,7 @@ document.addEventListener("click", function(e) {
                         <h3>${item.name} 
                         <button class="remove-btn" data-remove-btn="${item.id}">
                         remove</button> $${item.price}
-                        </h3>
-                        `
+                        </h3>`
                 })        
                 total.innerHTML = `
                 <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
@@ -63,10 +59,12 @@ completeBtn.addEventListener("click", function() {
 const mainMenu = document.getElementById("main-menu")
 const paymentModal = document.getElementById("payment-modal")
 const payBtn = document.getElementById("pay-btn")
-payBtn.addEventListener("click", function() {
+paymentModal.addEventListener("submit", function(e) {
+        e.preventDefault()
+        const paymentModalData = new FormData(paymentModal)
+        const userName = paymentModalData.get("name-input")
         document.getElementById("confirm-modal").innerHTML = `
-                <h2>Thanks, James! Your order is on its way!</h2>
-                `
+                <h2>Thanks, ${userName}! Your order is on its way!</h2>`
         mainMenu.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
