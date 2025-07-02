@@ -50,24 +50,29 @@ document.addEventListener("click", function(e) {
                 }     
 })
 
+
 const completeBtn = document.getElementById("complete-btn")
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
         mainMenu.style.backgroundColor = "rgba(0,0,0,0.4)"
+        
         })
 
+
+        
 const mainMenu = document.getElementById("main-menu")
 const paymentModal = document.getElementById("payment-modal")
-const payBtn = document.getElementById("pay-btn")
 paymentModal.addEventListener("submit", function(e) {
         e.preventDefault()
         const paymentModalData = new FormData(paymentModal)
         const userName = paymentModalData.get("name-input")
         document.getElementById("confirm-modal").innerHTML = `
                 <h2>Thanks, ${userName}! Your order is on its way!</h2>`
+        paymentModal.reset()
         mainMenu.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
+        
         document.getElementById("confirm-modal").style.display = 'flex'
 })
 
