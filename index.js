@@ -9,7 +9,7 @@ const menuHtml = menuArray.map (function(menuItem) {
                                 <p class="item-ingredients">${menuItem.ingredients}</p>
                                 <h2 class="item-price">$${menuItem.price}</h2>
                         </div>
-                        <button id="add-btn" data-add-btn="${menuItem.id}">+</button>
+                        <button id="add-btn" class="add-btn" data-add-btn="${menuItem.id}">+</button>
                 </div>`
         }).join("")
 
@@ -72,7 +72,6 @@ paymentModal.addEventListener("submit", function(e) {
         mainMenu.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
-        
         document.getElementById("confirm-modal").style.display = 'flex'
 })
 
