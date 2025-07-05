@@ -14,8 +14,9 @@ header {
     background-size: cover;
     background-position: center;
     color: white;
-    height: 170px;
-    padding: 0;
+    height: 140px;
+    margin: auto, auto, auto, 0;
+    padding: 30px;
     /*border: 2px dashed red;*/
 }
 
@@ -24,10 +25,7 @@ main {
     /*border: white*/
 }
 
-.title {
-    margin: auto, auto, auto, 0;
-    padding: 30px;
-}
+
 
 h1 {
     margin-top: 10px;
@@ -78,7 +76,20 @@ h3 {
 }
 
  .order {
-    display: none
+    display: none;
+    text-align: center;
+    width: 500px;
+    margin: 15px auto;
+    border: 2px dashed red
+ }
+
+ .items-ordered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /*flex-direction: column;*/
+    
  }
 
 .total {
@@ -93,8 +104,10 @@ h3 {
 }
 
 #complete-btn {
+    display: none;
     width: 600px;
-    height: 70px
+    height: 70px;
+    
 }
 
  .payment-modal {

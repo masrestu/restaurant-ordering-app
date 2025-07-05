@@ -1,5 +1,5 @@
 import {menuArray} from "/data.js"
-
+const main = document.getElementById("main")
 const menuHtml = menuArray.map (function(menuItem) {
                 return `
                 <div class="menu-item">
@@ -16,6 +16,7 @@ const menuHtml = menuArray.map (function(menuItem) {
 document.getElementById("menu-items").innerHTML = menuHtml
 
 const itemsOrderedArr = []
+const completeBtn = document.getElementById("complete-btn")
 let itemsOrdered = document.getElementById("items-ordered")
 let total = document.getElementById("total")
 document.addEventListener("click", function(e) {
@@ -28,6 +29,7 @@ document.addEventListener("click", function(e) {
                 remove</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
                 </h3>`
         order.style.display = "block"
+        completeBtn.style.display = "block"
        } 
         const totalPrice = itemsOrderedArr.reduce((total,currentPrice) => 
                  total + currentPrice.price, 0)
@@ -51,28 +53,30 @@ document.addEventListener("click", function(e) {
 })
 
 
-const completeBtn = document.getElementById("complete-btn")
+
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
-        mainMenu.style.backgroundColor = "rgba(0,0,0,0.4)"
+        main.style.backgroundColor = "rgba(0,0,0,0.4)"
         
         })
 
 
         
-const mainMenu = document.getElementById("main-menu")
+
 const paymentModal = document.getElementById("payment-modal")
+const confirmModal = document.getElementById("confirm-modal")
 paymentModal.addEventListener("submit", function(e) {
         e.preventDefault()
         const paymentModalData = new FormData(paymentModal)
         const userName = paymentModalData.get("name-input")
-        document.getElementById("confirm-modal").innerHTML = `
+        confirmModal.innerHTML = `
                 <h2>Thanks, ${userName}! Your order is on its way!</h2>`
+        confirmModal.style.display = 'flex'
         paymentModal.reset()
-        mainMenu.style.backgroundColor = "white"        
+        main.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
-        document.getElementById("confirm-modal").style.display = 'flex'
+        completeBtn.style.display = "none"
 })
 
 
