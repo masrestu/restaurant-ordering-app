@@ -23,11 +23,15 @@ document.addEventListener("click", function(e) {
        if (e.target.dataset.addBtn) {
         itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
         itemsOrdered.innerHTML += `
+                <div class="item-ordered" id="item-ordered">
                 <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
                 <button class="remove-btn" 
                 data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
-                remove</button> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
-                </h3>`
+                remove</button>
+                </h3>
+                <h3> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
+                </h3>
+                </div>`
         order.style.display = "block"
         completeBtn.style.display = "block"
        } 
@@ -35,24 +39,30 @@ document.addEventListener("click", function(e) {
                  total + currentPrice.price, 0)
         let total = document.getElementById("total")
         total.innerHTML = `
-                <h3>Total price: $${totalPrice}</h3>`
+                <h3>Total price: </h3>
+                <h3> $${totalPrice}</h3>`
         if (e.target.dataset.removeBtn) {
                 const itemToRemove = menuArray[e.target.dataset.removeBtn]
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
                 itemsOrdered.innerHTML = ""
                 itemsOrdered.innerHTML = itemsOrderedArr.map(function(item) {
                         return `
+                        <div class="item-ordered" id="item-ordered">
                         <h3>${item.name} 
                         <button class="remove-btn" data-remove-btn="${item.id}">
-                        remove</button> $${item.price}
-                        </h3>`
+                        remove</button>
+                        </h3>
+                        <h3> $${item.price}</h3>
+                        </div>`
                 })        
                 total.innerHTML = `
-                <h3>Total price: $${totalPrice - itemToRemove.price}</h3>`
+                <h3>Total price: </h3>
+                <h3> $${totalPrice - itemToRemove.price}</h3>`
                 }     
 })
 
-
+console.log(document.getElementsByClassName("item-ordered"))
+console.log(document.getElementById("item-ordered"))
 
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"

@@ -80,19 +80,17 @@ h3 {
     text-align: center;
     width: 500px;
     margin: 15px auto;
-    border: 2px dashed red
+    /*border: 2px dashed red*/
  }
 
- .items-ordered {
+ .item-ordered {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    /*flex-direction: column;*/
-    
  }
 
 .total {
+    display: flex;
+    justify-content: space-between;
     border-top: 2px solid gray;
 }
 
