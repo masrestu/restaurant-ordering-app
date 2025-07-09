@@ -80,7 +80,7 @@ paymentModal.addEventListener("submit", function(e) {
         const paymentModalData = new FormData(paymentModal)
         const userName = paymentModalData.get("name-input")
         confirmModal.innerHTML = `
-                <h1>Thanks, ${userName}! Your order is on its way!</h1>`
+                <h1 class="thanx-msg">Thanks, ${userName}! Your order is on its way!</h1>`
         confirmModal.style.display = 'flex'
         paymentModal.reset()
         main.style.backgroundColor = "white"        

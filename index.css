@@ -1,6 +1,5 @@
 body {
-    /*margin: 10px auto 0 auto;*/
-    margin: 0 auto;
+    margin: auto;
     width: 600px;
     font-family: "Smythe", system-ui;
     background-color: #ECFDF5;
@@ -23,13 +22,14 @@ header {
 
 main {
     background-color: white;
-    
-    border: 2px dashed red
-    
+    padding: 40px;   
+    /*border: 2px dashed red*/ 
 }
 
 .menu-items {
-    margin:0
+    /*margin:0;*/
+    margin: 0 auto;
+    padding: 20px;
 }
 
 
@@ -42,7 +42,8 @@ h2 {
 }
 
 h3 {
-    /*margin-top: 0;*/
+    margin-top: 0;
+    margin-bottom: 5px;
     font-size: 28px;
     font-weight: lighter;
 }
@@ -50,6 +51,11 @@ h3 {
 .item-name, .item-ingredients {
     margin: 0
 }
+
+.item-ingredients {
+    color: #8B8B8B
+}
+
 .menu-item {
     display: flex;
     justify-content: space-evenly;
@@ -57,9 +63,9 @@ h3 {
     border-bottom: 1px solid #C6C6C6;
     width: 500px;
     height: 140px;
-    /*border: 2px dashed green;*/
     margin: 0 auto;
-    padding: 20px;
+    padding-top: 20px;
+    /*border: 2px dashed green;*/
  }
 
 
@@ -72,17 +78,16 @@ h3 {
 }
 
 #add-btn {
+    display: flex;
+    justify-content: center;
     border-radius: 50%;
     width: 50px;
     height: 50px;
     border-style: solid;
     margin: 0 0 auto auto;
-    
-    /*background-color: white;*/
     background: none;
-    color: #d9d9d9;
     font-size: 32px;
-    font-weight:100;
+    font-weight: 200;
     cursor: pointer;
 }
 
@@ -90,9 +95,15 @@ h3 {
     display: none;
     text-align: center;
     width: 500px;
-    margin: 15px auto;
+    /*margin: 15px auto;*/
+    margin: 0 auto;
+    padding: 20px;
     /*border: 2px dashed red*/
  }
+
+.items-ordered{
+    padding-bottom: 10px;
+}
 
  .item-ordered {
     display: flex;
@@ -103,6 +114,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     border-top: 2px solid gray;
+    padding-top: 10px;
 }
 
 .remove-btn {
@@ -114,9 +126,11 @@ h3 {
 
 #complete-btn {
     display: none;
-    width: 600px;
+    width: 500px;
     height: 70px;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;
+    margin-top: 30px;*/
+    margin: 40px auto 30px auto;
 }
 
  .payment-modal {
@@ -178,3 +192,4 @@ h3 {
     height: 120px;
     /*border: 2px dashed blue*/
  }
+
