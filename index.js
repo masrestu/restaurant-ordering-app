@@ -87,14 +87,15 @@ paymentModal.addEventListener("submit", function(e) {
         paymentModal.style.display = "none"
         order.style.display = "none"
         completeBtn.style.display = "none"
+
+        
+
 })
 
 
 
-
-/* Styling strategy
-
-     styling similar to Oldagram:
-        1 section in HTML, iterate in JS for innerHtml
-
-*/
+/*document.addEventListener("click", function(e) {
+       if (e.target.dataset.addBtn) {
+        e.target.disabled = true
+        }
+})*/
