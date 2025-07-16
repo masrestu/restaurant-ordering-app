@@ -20,27 +20,29 @@ const completeBtn = document.getElementById("complete-btn")
 let itemsOrdered = document.getElementById("items-ordered")
 let total = document.getElementById("total")
 document.addEventListener("click", function(e) {
-       if (e.target.dataset.addBtn) {
-        itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
-        itemsOrdered.innerHTML += `
-                <div class="item-ordered" id="item-ordered">
-                <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
-                <button class="remove-btn" 
-                data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
-                remove</button>
-                </h3>
-                <h3> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
-                </h3>
-                </div>`
-        order.style.display = "block"
-        completeBtn.style.display = "block"
-       } 
+       if (e.target.dataset.addBtn && confirmModal.style.display !== 'flex') {
+                itemsOrderedArr.push(menuArray[e.target.dataset.addBtn])
+                itemsOrdered.innerHTML += `
+                        <div class="item-ordered" id="item-ordered">
+                        <h3>${itemsOrderedArr[itemsOrderedArr.length - 1].name} 
+                        <button class="remove-btn" 
+                        data-remove-btn="${menuArray[e.target.dataset.addBtn].id}">
+                        remove</button>
+                        </h3>
+                        <h3> $${itemsOrderedArr[itemsOrderedArr.length - 1].price}
+                        </h3>
+                        </div>`
+                order.style.display = "block"
+                completeBtn.style.display = "block"
+                } 
+
         const totalPrice = itemsOrderedArr.reduce((total,currentPrice) => 
                  total + currentPrice.price, 0)
         let total = document.getElementById("total")
         total.innerHTML = `
                 <h3>Total price: </h3>
                 <h3> $${totalPrice}</h3>`
+                
         if (e.target.dataset.removeBtn) {
                 const itemToRemove = menuArray[e.target.dataset.removeBtn]
                 itemsOrderedArr.splice(itemsOrderedArr.indexOf(itemToRemove), 1)
@@ -58,11 +60,13 @@ document.addEventListener("click", function(e) {
                 total.innerHTML = `
                 <h3>Total price: </h3>
                 <h3> $${totalPrice - itemToRemove.price}</h3>`
-                }     
+                }
+        if (itemsOrderedArr.length === 0) {
+                order.style.display = "none"
+                }   
 })
 
-console.log(document.getElementsByClassName("item-ordered"))
-console.log(document.getElementById("item-ordered"))
+
 
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
@@ -92,10 +96,3 @@ paymentModal.addEventListener("submit", function(e) {
 
 })
 
-
-
-/*document.addEventListener("click", function(e) {
-       if (e.target.dataset.addBtn) {
-        e.target.disabled = true
-        }
-})*/

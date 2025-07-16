@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>Jimmy's Diner</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
@@ -39,6 +40,8 @@
                         id="number-input"
                         name="number-input"
                         placeholder="Enter card number"
+                        minlength="16"
+                        maxlength="16"
                         required
                         >
                 <input type="text"
@@ -46,6 +49,8 @@
                         id="cvv-input"
                         name="cvv-input"
                         placeholder="Enter CVV"
+                        minlength="3"
+                        maxlength="3"
                         required
                         >
                 <button type="submit" id="pay-btn">Pay</button>
