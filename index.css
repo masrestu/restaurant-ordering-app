@@ -115,14 +115,6 @@ h3 {
     color: #d9d9d9;
 }
 
-#complete-btn {
-    display: none;
-    width: 500px;
-    height: 70px;
-    font-size: medium;
-    margin: 40px auto 30px auto;
-}
-
  .payment-modal {
     display: none;
     position: fixed;
@@ -146,23 +138,28 @@ h3 {
     margin: 20px auto;
  }
 
-.card-input, #pay-btn {
-    width: 475px;
-    height: 70px;
-}
-
 .card-input {
     font-family: verdana, sans-serif;
     font-size: 20px;
+    width: 475px;
+    height: 70px;
     border: 2px solid #16DB99;
     border-radius: 5px;
     padding-left: 10px;
     margin: 10px auto;
 }
 
-#pay-btn, #complete-btn {
+#complete-btn, .reload-modal {
+    display: none;
+}
+
+#pay-btn, #complete-btn, .reload-modal {
     font-family: verdana, sans-serif;
     font-weight: bold;
+    width: 475px;
+    height: 70px;
+    font-size: 20px;
+    margin: 40px auto 30px auto;
     color: white;
     background-color: #16DB99;
     border: none;
@@ -170,12 +167,7 @@ h3 {
     cursor: pointer;    
 }
 
-#pay-btn {
-    font-size: 20px;
-    margin: 30px auto;
-}
-
- .confirm-modal, .reload-modal {
+ .confirm-modal {
     display: none;
     background-color: #ECFDF5;
     align-items: center;

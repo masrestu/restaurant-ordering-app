@@ -82,7 +82,8 @@ paymentModal.addEventListener("submit", function(e) {
         confirmModal.innerHTML = `
                 <h1 class="thanx-msg">Thanks, ${userName}! Your order is on its way!</h1>`
         confirmModal.style.display = 'flex'
-        reloadModal.style.display = 'flex'
+        reloadModal.style.display = 'block'
+        reloadModal.scrollIntoView({behavior: "smooth"})
         paymentModal.reset()
         main.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
