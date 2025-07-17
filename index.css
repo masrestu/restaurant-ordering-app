@@ -3,7 +3,6 @@ body {
     width: 600px;
     font-family: "Smythe", system-ui;
     background-color: #ECFDF5;
-    /*border: 2px dashed red*/
 } 
 
 header {
@@ -17,21 +16,17 @@ header {
     height: 140px;
     margin: auto, auto, auto, 0;
     padding: 30px;
-    /*border: 2px dashed red;*/
 }
 
 main {
     background-color: white;
-    padding: 40px;   
-    /*border: 2px dashed red*/ 
+    padding: 40px;
 }
 
 .menu-items {
-    /*margin:0;*/
     margin: 0 auto;
     padding: 20px;
 }
-
 
 .headline {
     margin-bottom: 0;
@@ -65,9 +60,7 @@ h3 {
     height: 140px;
     margin: 0 auto;
     padding-top: 20px;
-    /*border: 2px dashed green;*/
  }
-
 
 .emoji {
     font-size: 80px;
@@ -95,10 +88,8 @@ h3 {
     display: none;
     text-align: center;
     width: 500px;
-    /*margin: 15px auto;*/
     margin: 0 auto;
     padding: 20px;
-    /*border: 2px dashed red*/
  }
 
 .items-ordered{
@@ -146,7 +137,6 @@ h3 {
     border-radius: 5px;
     text-align: center;
     font-family: verdana, sans-serif;
-    /*border: 2px dashed blue;*/
  }
 
  label {
@@ -177,17 +167,15 @@ h3 {
     background-color: #16DB99;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
-
 
 #pay-btn {
     font-size: 20px;
     margin: 30px auto;
 }
 
- .confirm-modal {
+ .confirm-modal, .reload-modal {
     display: none;
     background-color: #ECFDF5;
     align-items: center;
@@ -196,6 +184,4 @@ h3 {
     margin: 40px auto;
     width: 500px;
     height: 120px;
-    /*border: 2px dashed blue*/
  }
-

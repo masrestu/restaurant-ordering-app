@@ -33,6 +33,7 @@ document.addEventListener("click", function(e) {
                         </h3>
                         </div>`
                 order.style.display = "block"
+                order.scrollIntoView({behavior: "smooth"})
                 completeBtn.style.display = "block"
                 } 
 
@@ -66,19 +67,14 @@ document.addEventListener("click", function(e) {
                 }   
 })
 
-
-
 completeBtn.addEventListener("click", function() {
         paymentModal.style.display = "block"
         main.style.backgroundColor = "rgba(0,0,0,0.4)"
-        
         })
-
-
-        
 
 const paymentModal = document.getElementById("payment-modal")
 const confirmModal = document.getElementById("confirm-modal")
+const reloadModal = document.getElementById("reload-modal")
 paymentModal.addEventListener("submit", function(e) {
         e.preventDefault()
         const paymentModalData = new FormData(paymentModal)
@@ -86,13 +82,10 @@ paymentModal.addEventListener("submit", function(e) {
         confirmModal.innerHTML = `
                 <h1 class="thanx-msg">Thanks, ${userName}! Your order is on its way!</h1>`
         confirmModal.style.display = 'flex'
+        reloadModal.style.display = 'flex'
         paymentModal.reset()
         main.style.backgroundColor = "white"        
         paymentModal.style.display = "none"
         order.style.display = "none"
         completeBtn.style.display = "none"
-
-        
-
 })
-
