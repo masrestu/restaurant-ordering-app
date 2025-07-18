@@ -5,6 +5,29 @@ body {
     background-color: #ECFDF5;
 } 
 
+/* typography */
+
+.headline {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 28px;
+    font-weight: lighter;
+}
+
+.emoji {
+    font-size: 80px;
+}
+
+/* layout */
+
 header {
     display: flex;
     flex-direction: column;
@@ -28,21 +51,6 @@ main {
     padding: 20px;
 }
 
-.headline {
-    margin-bottom: 0;
-}
-
-h2 {
-    font-size: 20px;
-}
-
-h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 28px;
-    font-weight: lighter;
-}
-
 .item-name, .item-ingredients {
     margin: 0
 }
@@ -62,26 +70,8 @@ h3 {
     padding-top: 20px;
  }
 
-.emoji {
-    font-size: 80px;
-}
-
 .item-info {
     margin: 10px;
-}
-
-#add-btn {
-    display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border-style: solid;
-    margin: 0 0 auto auto;
-    background: none;
-    font-size: 32px;
-    font-weight: 200;
-    cursor: pointer;
 }
 
  .order {
@@ -106,13 +96,6 @@ h3 {
     justify-content: space-between;
     border-top: 2px solid gray;
     padding-top: 10px;
-}
-
-.remove-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #d9d9d9;
 }
 
  .payment-modal {
@@ -149,6 +132,40 @@ h3 {
     margin: 10px auto;
 }
 
+ .confirm-modal {
+    display: none;
+    background-color: #ECFDF5;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: 40px auto;
+    width: 500px;
+    height: 120px;
+ }
+
+/* buttons */
+
+#add-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    margin: 0 0 auto auto;
+    background: none;
+    font-size: 32px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.remove-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #d9d9d9;
+}
+
 #complete-btn, .reload-modal {
     display: none;
 }
@@ -166,14 +183,3 @@ h3 {
     border-radius: 5px;
     cursor: pointer;    
 }
-
- .confirm-modal {
-    display: none;
-    background-color: #ECFDF5;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    margin: 40px auto;
-    width: 500px;
-    height: 120px;
- }
