@@ -145,6 +145,7 @@ main {
 
 /* buttons */
 
+
 #add-btn {
     display: flex;
     justify-content: center;
@@ -157,11 +158,10 @@ main {
     border-style: solid;
     margin: 0 0 auto auto;
     background: none;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 200;
     cursor: pointer;
-    /*padding: 0;*/
-    
+    /*padding: 0;*/ 
 }
 
 .remove-btn {
