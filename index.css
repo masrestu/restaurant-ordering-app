@@ -148,8 +148,7 @@ main {
 
 #add-btn {
     display: flex;
-    justify-content: center;
-    /*align-items: center;*/
+    justify-content: space-around;
     text-align: center;
     border-radius: 50%;
     width: 50px;
