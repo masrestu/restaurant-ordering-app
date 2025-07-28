@@ -184,3 +184,10 @@ main {
     border-radius: 5px;
     cursor: pointer;    
 }
+
+.add-btn {
+    font-family: Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
